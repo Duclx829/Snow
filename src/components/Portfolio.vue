@@ -17,7 +17,7 @@
                 </router-link>
                 <div
                     class="portfolio-image"
-                    :style="`background: url('../assets/${item.image}')`"
+                    :style="`background-image: url('./src/assets/${item.image}')`"
                 ></div>
                 <div class="portfolio-content">
                     <h4 class="portfolio-title">{{ item.title }}</h4>
@@ -151,6 +151,9 @@ export default {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.portfolio-image:nth-child(2n){
+    background-color: lightgray;
 }
 
 .portfolio-content {
