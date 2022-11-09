@@ -95,7 +95,7 @@ export default {
               <IconBriefcase />
             </div>
             <div>
-              <div class="box-count">548</div>
+              <div class="box-count">65</div>
               <div class="box-title">Project completed</div>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default {
               <IconClock />
             </div>
             <div>
-              <div class="box-count">1465</div>
+              <div class="box-count">145</div>
               <div class="box-title">Working hours</div>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default {
               <IconStar />
             </div>
             <div>
-              <div class="box-count">612</div>
+              <div class="box-count">62</div>
               <div class="box-title">Positive feedbacks</div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default {
               <IconHeart />
             </div>
             <div>
-              <div class="box-count">735</div>
+              <div class="box-count">35</div>
               <div class="box-title">Happy clients</div>
             </div>
           </div>
