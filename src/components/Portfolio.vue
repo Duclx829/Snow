@@ -17,7 +17,7 @@
                 </router-link>
                 <div
                     class="portfolio-image"
-                    :style="`background-image: url('./assets/${item.image}')`"
+                    :style="`background: url('../assets/${item.image}')`"
                 ></div>
                 <div class="portfolio-content">
                     <h4 class="portfolio-title">{{ item.title }}</h4>
