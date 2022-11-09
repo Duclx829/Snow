@@ -44,11 +44,31 @@ export default {
       } else {
         this.blogViews = 3;
       }
+    },
+    loadImg: (img) => {
+      const src = img.getAttribute("lazy-src");
+      img.setAttribute("src", src);
+    },
+    ready: function () {
+      if ("IntersectionObserver" in window) {
+        let lazyImgs = document.querySelectorAll("img[lazy-src]");
+        let observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              this.loadImg(entry.target);
+            }
+          })
+        });
+        lazyImgs.forEach(img => {
+          observer.observe(img);
+        })
+      }
     }
   },
   mounted() {
     this.responsiveSlider();
     $(window).resize(this.responsiveSlider);
+    $(document).ready(this.ready);
   }
 }
 </script>
@@ -59,7 +79,7 @@ export default {
       :isSolid="false"
       :isFixed="true"
     ></Navbar>
-    <div id="header" >
+    <div id="header">
       <h6 class="header-subtitle">New branding agency</h6>
       <h3 class="container header-title">We are about to change the way<br /><em>you publish on the web</em></h3>
       <a
@@ -219,49 +239,65 @@ export default {
         >
           <SwiperSlide :virtualIndex="0">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-4-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-4-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="1">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-3-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-3-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="2">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-5-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-5-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="3">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-6-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-6-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="4">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-7-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-7-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <Swiper-Slide :virtualIndex="5">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-8-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-8-dark.png"
+              alt="partner logo"
               width="150"
             />
           </Swiper-Slide>
           <SwiperSlide :virtualIndex="6">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-1-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-1-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="7">
             <img
-              src="http://unvab.com/snow-free-html/assets/images/partner-logo-2-dark.png"
+              src=""
+              lazy-src="http://unvab.com/snow-free-html/assets/images/partner-logo-2-dark.png"
+              alt="partner logo"
               width="150"
             />
           </SwiperSlide>
@@ -298,7 +334,10 @@ export default {
               <a href="/">
                 <div class="card-img-top">
                   <div class="card-img">
-                    <img :src="blog.image" />
+                    <img
+                      src=""
+                      :lazy-src="blog.image"
+                    />
                   </div>
                   <a
                     class="card-link"

@@ -28,12 +28,14 @@
                         <router-link
                             to="/about"
                             class="navbar__link"
+                            @click="animateTo('about', 600)"
                         >About</router-link>
                     </li>
                     <li class="navbar__item">
                         <router-link
                             to="/contact"
                             class="navbar__link"
+                            @click="animateTo('contact', 600)"
                         >Contact</router-link>
                     </li>
                     <li class="navbar__item">
@@ -139,6 +141,7 @@ const toggleMobileNav = (state) => {
 }
 
 const animateTo = (toId, time = 0) => {
+    if(!$(`#${toId}`).position()) return;
     $("html, body").animate({ scrollTop: $(`#${toId}`).position().top - $("#navbar").height() }, time);
 }
 
