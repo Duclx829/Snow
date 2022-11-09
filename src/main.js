@@ -45,7 +45,7 @@ const store = new Vuex.Store({
             portfolio: [
                 {
                     id: 1,
-                    image: "portfolio-1.png",
+                    image: "https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/1631/posts/41359/image-upload/VinylRecordMockup20.jpg",
                     title: "Vinly Record",
                     categoryId: 5
                 },
