@@ -6,7 +6,7 @@
             navbarSolid ? 'navbar-solid' : 'navbar-transparent'
         ]"
     >
-        <div class="container w-100">
+        <div class="container">
             <div class="navbar">
                 <a
                     href="/"

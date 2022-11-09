@@ -1,7 +1,7 @@
 <template>
     <div>
         <Navbar></Navbar>
-        <div class="container mt-0 mt-lg-5 w-100 blog">
+        <div class="container mt-0 mt-lg-5 blog">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 blog-post-isotope">
                     <ToggleNavbar
