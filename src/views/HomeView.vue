@@ -25,7 +25,8 @@ export default {
   },
   data() {
     return {
-      modules: [Pagination]
+      modules: [Pagination],
+      blogViews: 0
     };
   },
   computed: {
@@ -34,7 +35,20 @@ export default {
   methods: {
     animateToNextElement: function (event) {
       $("html, body").animate({ scrollTop: $(event.target).parent().height() - $("#navbar").height() }, 600);
+    },
+    responsiveSlider: function () {
+      if (window.matchMedia('(max-width: 576px)').matches) {
+        this.blogViews = 1;
+      } else if (window.matchMedia('(max-width: 740px)').matches) {
+        this.blogViews = 2;
+      } else {
+        this.blogViews = 3;
+      }
     }
+  },
+  mounted() {
+    this.responsiveSlider();
+    $(window).resize(this.responsiveSlider);
   }
 }
 </script>
@@ -45,9 +59,9 @@ export default {
       :isSolid="false"
       :isFixed="true"
     ></Navbar>
-    <div id="header">
+    <div id="header" >
       <h6 class="header-subtitle">New branding agency</h6>
-      <h3 class="header-title">We are about to change the way<br /><em>you publish on the web</em></h3>
+      <h3 class="container header-title">We are about to change the way<br /><em>you publish on the web</em></h3>
       <a
         class="arrow-down"
         @click="animateToNextElement($event)"
@@ -57,9 +71,9 @@ export default {
       id="about"
       class="bg-white"
     >
-      <div class="container">
+      <div class="container my-5 py-5">
         <div class="row m-0">
-          <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2">
+          <div class="col-lg-8 offset-md-0 offset-lg-2">
             <h2 class="about-title">About our agency</h2>
             <p class="about-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, et velit
               voluptatibus odio a possimus magni, deserunt rerum illum est molestiae accusantium sunt dignissimos
@@ -74,9 +88,9 @@ export default {
     </div>
     <div class="box bg-dark">
       <div class="container">
-        <div class="my-5 py-2"></div>
+        <div class="my-4 my-lg-5 py-2"></div>
         <div class="row">
-          <div class="col-lg-3 d-flex align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-3 my-4 d-flex align-items-center">
             <div class="box-icon">
               <IconBriefcase />
             </div>
@@ -85,7 +99,7 @@ export default {
               <div class="box-title">Project completed</div>
             </div>
           </div>
-          <div class="col-lg-3 d-flex align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-3 my-4 d-flex align-items-center">
             <div class="box-icon">
               <IconClock />
             </div>
@@ -94,7 +108,7 @@ export default {
               <div class="box-title">Working hours</div>
             </div>
           </div>
-          <div class="col-lg-3 d-flex align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-3 my-4 d-flex align-items-center">
             <div class="box-icon">
               <IconStar />
             </div>
@@ -103,7 +117,7 @@ export default {
               <div class="box-title">Positive feedbacks</div>
             </div>
           </div>
-          <div class="col-lg-3 d-flex align-items-center">
+          <div class="col-sm-12 col-md-6 col-lg-3 my-4 d-flex align-items-center">
             <div class="box-icon">
               <IconHeart />
             </div>
@@ -113,14 +127,14 @@ export default {
             </div>
           </div>
         </div>
-        <div class="my-5 py-2"></div>
+        <div class="my-4 my-lg-5 py-2"></div>
       </div>
     </div>
     <div
       id="project"
       class="bg-white"
     >
-      <div class="container">
+      <div class="container w-100">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="project-title">Best projects</div>
@@ -144,7 +158,7 @@ export default {
       >
         <swiper-slide>
           <div class="quote">
-            <div class="container">
+            <div class="container-md">
               <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                   <blockquote>
@@ -161,7 +175,7 @@ export default {
         </swiper-slide>
         <swiper-slide>
           <div class="quote">
-            <div class="container">
+            <div class="container-md">
               <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                   <blockquote>
@@ -178,7 +192,7 @@ export default {
         </swiper-slide>
         <swiper-slide>
           <div class="quote">
-            <div class="container">
+            <div class="container-md">
               <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                   <blockquote>
@@ -195,7 +209,7 @@ export default {
         </swiper-slide>
       </swiper>
     </div>
-    <div class="container-fluid bg-white py-3">
+    <div class="d-none d-md-block container-fluid bg-white py-5">
       <div class="container">
         <Swiper
           :slides-per-view="5"
@@ -206,52 +220,51 @@ export default {
           <SwiperSlide :virtualIndex="0">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-4-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="1">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-3-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="2">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-5-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="3">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-6-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="4">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-7-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <Swiper-Slide :virtualIndex="5">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-8-dark.png"
-              width="200"
+              width="150"
             />
           </Swiper-Slide>
           <SwiperSlide :virtualIndex="6">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-1-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
           <SwiperSlide :virtualIndex="7">
             <img
               src="http://unvab.com/snow-free-html/assets/images/partner-logo-2-dark.png"
-              width="200"
+              width="150"
             />
           </SwiperSlide>
-
         </Swiper>
       </div>
     </div>
@@ -259,9 +272,9 @@ export default {
       id="blog"
       class="bg-gray-1 py-5"
     >
-      <div class="container mt-5">
+      <div class="container-md mt-5">
         <div class="row m-0">
-          <div class="col-md-8 col-lg-8 offset-md-2 offset-lg-2">
+          <div class="col-lg-8 offset-lg-2">
             <h2 class="blog-title">Lastest blog</h2>
             <p class="blog-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore ipsum
               laudantium harum autem quidem ex ullam explicabo sint alias. Eligendi?</p>
@@ -269,19 +282,19 @@ export default {
         </div>
         <div class="py-4"></div>
         <Swiper
-          :slides-per-view="3"
-          :space-between="30"
+          :slides-per-view="blogViews"
+          :space-between="5"
           :pagination="true"
           :modules="modules"
           loop
           class="mySwiper"
         >
           <SwiperSlide
-            v-for="(blog, index) in blogs.slice(0,5)"
+            v-for="(blog, index) in blogs.slice(0, 5)"
             :key="index"
             :virtualIndex="index"
           >
-            <div class="card">
+            <div class="card mx-1 mx-lg-2">
               <a href="/">
                 <div class="card-img-top">
                   <div class="card-img">
@@ -304,9 +317,9 @@ export default {
       </div>
     </div>
     <div id="contact">
-      <div class="container">
+      <div class="container-md">
         <div class="row">
-          <div class="col-lg-5 pe-4">
+          <div class="col-sm-10 offset-sm-1 col-md-12 offset-md-0 col-lg-5 pe-lg-4">
             <h3>Contact info:</h3>
             <p>Praesent interdum congue mauris, et fringilla lacus pel vitae. Quisque nisl mauris, aliquam eu ultrices
               vel, conse vitae sapien at imperdiet risus. Quisque cursus risus id. fermentum, in auctor quam
@@ -319,7 +332,7 @@ export default {
               <li class="my-3 small"><span class="text-dark fw-bold">Email:&ensp;</span>info@Example.com</li>
             </ul>
           </div>
-          <div class="col-lg-7 ps-4">
+          <div class="col-sm-10 offset-sm-1 col-md-12 offset-md-0 col-lg-7 ps-lg-4">
             <form action="/">
               <div class="row m-0 gap-4">
                 <div class="col p-0">
@@ -493,7 +506,7 @@ export default {
   justify-content: center;
   color: #fff;
   position: relative;
-
+  overflow: hidden;
 }
 
 .header-subtitle {
@@ -509,6 +522,7 @@ export default {
   font-weight: 700;
   text-align: center;
   margin: 1.5rem 0;
+  width: 100%;
 }
 
 .arrow-down {
@@ -545,7 +559,6 @@ export default {
 
 
 #about {
-  height: 50vh;
   display: flex;
   align-items: center;
 }
@@ -590,7 +603,7 @@ export default {
 
 .about-signature {
   display: block;
-  margin: 2rem auto;
+  margin: 2rem auto 0 auto;
 }
 
 .box {
@@ -663,5 +676,13 @@ export default {
 
 #contact button:hover {
   background: rgba(17, 17, 17, 0.85);
+}
+
+@media (min-width: 1400px) {
+
+  #blog .container-md,
+  #contact .container-md {
+    max-width: 1140px
+  }
 }
 </style>

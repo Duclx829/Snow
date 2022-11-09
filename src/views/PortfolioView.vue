@@ -1,11 +1,13 @@
 <template>
     <div>
         <Navbar></Navbar>
-        <ToggleNavbar
-            :categories="portfolioCategories"
-            v-on:category-selected="categorySelected"
-        ></ToggleNavbar>
-        <div class="container mb-5 pb-5">
+        <div class="mt-0 mt-lg-5 ">
+            <ToggleNavbar
+                :categories="portfolioCategories"
+                v-on:category-selected="categorySelected"
+            ></ToggleNavbar>
+        </div>
+        <div class="container mb-5 pb-5 w-100">
             <Portfolio
                 :portfolio="portfolio"
                 :categories="portfolioCategories"

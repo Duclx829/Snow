@@ -8,7 +8,7 @@
         >
             <div
                 class="portfolio-item"
-                :style="`--scaleDelay: ${index*0.05}s`"
+                :style="`--scaleDelay: ${index * 0.05}s`"
             >
                 <router-link
                     to="/"
@@ -94,6 +94,26 @@ export default {
     position: relative;
     visibility: visible;
     transition: all 0.5s ease, visibility 0s ease;
+}
+
+@media (max-width: 991px) {
+    .article {
+        width: 50%;
+        padding-top: 50%;
+    }
+}
+@media (max-width: 767px) {
+    .article {
+        width: 100%;
+        padding-top: 100%;
+    }
+}
+@media (max-width: 576px) {
+    .article {
+        width: 80%;
+        padding-top: 80%;
+        margin: 0 auto;
+    }
 }
 
 .article.hide {

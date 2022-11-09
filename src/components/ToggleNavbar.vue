@@ -4,13 +4,13 @@
         class="wrapper my-4"
     >
         <div
-            class="toggle d-flex justify-content-center"
-            :class="{active: show}"
+            class="toggle d-flex mb-4 justify-content-center"
+            :class="{ active: show }"
             @click="show = !show"
         >
             <IconGrid></IconGrid>
         </div>
-        <ul :class="{active: show}">
+        <ul :class="{ active: show }">
             <li :style="`--myDelay: 0.4s`">
                 <input
                     type="radio"
@@ -23,7 +23,7 @@
             <li
                 v-for="(item, index) in categories"
                 :key="index"
-                :style="`--myDelay: ${0.4+(index+1)*0.1}s`"
+                :style="`--myDelay: ${0.4 + (index + 1) * 0.1}s`"
             >
                 <input
                     type="radio"
@@ -92,9 +92,10 @@ export default {
 ul {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     margin-bottom: 0;
-    gap: 2.5rem;
+    padding: 0;
     transform-origin: top;
     transition: all var(--duration) ease;
     transition-delay: 0.7s;
@@ -105,11 +106,13 @@ ul {
 ul.active {
     transition-delay: 0s;
     height: 50px;
+    width: 100%;
 }
 
 li {
     list-style-type: none;
     opacity: 0;
+    margin: 0.1rem 1.2rem 0 1.2rem;
     transform: translateY(-50%);
     transition: opacity var(--duration) calc(var(--myDelay) - var(--duration)) ease,
         transform var(--duration) calc(var(--myDelay) - var(--duration)) ease;
@@ -120,11 +123,12 @@ ul.active li {
     transform: translateY(0);
     transition-delay: var(--myDelay);
 }
-input[type="radio"]{
+
+input[type="radio"] {
     display: none;
 }
 
-input[type="radio"] ~ label {
+input[type="radio"]~label {
     text-transform: uppercase;
     font-family: sans-serif;
     font-size: 0.85rem;
@@ -134,8 +138,8 @@ input[type="radio"] ~ label {
     cursor: pointer;
 }
 
-input[type="radio"]:checked ~ label,
-input[type="radio"]:hover ~ label {
+input[type="radio"]:checked~label,
+input[type="radio"]:hover~label {
     color: #111111;
 }
 </style>

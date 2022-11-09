@@ -38,7 +38,9 @@ const goToTop = () => {
     $("html, body").animate({ scrollTop: 0 }, 1000);
 }
 
-$(window).scroll(() => { isShow.value = $(window).scrollTop() > 800 });
+$(window).scroll(() => {
+    isShow.value = $(window).scrollTop() > 800
+});
 
 </script>
 
@@ -74,8 +76,9 @@ footer {
     opacity: 0;
     visibility: hidden;
     align-items: center;
+    transform: translateX(50px);
     justify-content: center;
-    transition: opacity 0.3s linear, visibility 0s 0.4s linear, po;
+    transition: opacity 0.3s linear, visibility 0s 0.3s linear, transform 0.3s;
     cursor: pointer;
     overflow: hidden;
     pointer-events: none;
@@ -83,15 +86,17 @@ footer {
 
 #toTop.show {
     pointer-events: auto;
-    opacity: 0.8;
+    opacity: 0.6;
     z-index: 10;
     border-color: #b4b4b4;
     transition: all 0.3s linear, visibility 0s 0s linear;
     visibility: visible;
+    transform: translateX(0);
 }
 
 
-#toTop:hover {
+#toTop:hover,
+#toTop:active {
     opacity: 1;
     border-color: rgb(97, 97, 97);
 
