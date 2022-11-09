@@ -25,8 +25,8 @@ export default {
   },
   data() {
     return {
+      blogViews: 3,
       modules: [Pagination],
-      blogViews: 0
     };
   },
   computed: {
@@ -282,10 +282,10 @@ export default {
         </div>
         <div class="py-4"></div>
         <Swiper
-          :slides-per-view="blogViews"
           :space-between="5"
           :pagination="true"
           :modules="modules"
+          :slides-per-view="blogViews"
           loop
           class="mySwiper"
         >
