@@ -51,49 +51,49 @@ const store = new Vuex.Store({
                 },
                 {
                     id: 2,
-                    image: "portfolio-2.png",
+                    image: "https://i.pinimg.com/736x/dc/3e/f2/dc3ef2e3f91ce69db74ebd7bfb4e76cd.jpg",
                     title: "Modern T-Shirt",
                     categoryId: 2
                 },
                 {
                     id: 3,
-                    image: "portfolio-3.png",
+                    image: "https://img.freepik.com/premium-psd/cotton-tote-bags-mockup_145224-157.jpg?w=2000",
                     title: "Cotton Bag",
                     categoryId: 3
                 },
                 {
                     id: 4,
-                    image: "portfolio-4.png",
+                    image: "https://i.etsystatic.com/27300019/r/il/000b73/3044691804/il_fullxfull.3044691804_4253.jpg",
                     title: "Clean & Groovy",
                     categoryId: 4
                 },
                 {
                     id: 5,
-                    image: "portfolio-5.png",
+                    image: "https://mockups-design.com/wp-content/uploads/2022/06/Free_90x50mm_Business_Card_Mockup_1-1.jpg",
                     title: "Bussiness card",
                     categoryId: 1
                 },
                 {
                     id: 6,
-                    image: "portfolio-6.png",
+                    image: "https://www.freemockupworld.com/wp-content/uploads/2020/07/Phone-Screens-Mockup-01-1-1536x939.jpg",
                     title: "Minimal Mobile App",
                     categoryId: 4
                 },
                 {
                     id: 7,
-                    image: "portfolio-7.png",
+                    image: "https://i.pinimg.com/564x/f5/b6/e6/f5b6e6f8827cf38878fc4cd9873495a6.jpg",
                     title: "Minimal Desktop App",
                     categoryId: 4
                 },
                 {
                     id: 8,
-                    image: "portfolio-8.png",
+                    image: "https://i.pinimg.com/564x/c2/0c/f0/c20cf07ba873a06a4f60f1870c3b11cd.jpg",
                     title: "Paper cup",
                     categoryId: 4
                 },
                 {
                     id: 9,
-                    image: "portfolio-9.png",
+                    image: "https://graphicburger.com/wp-content/uploads/2014/03/Shopping-Bag-PSD-MockUp-600.jpg",
                     title: "Minimal Bag",
                     categoryId: 1
                 }
