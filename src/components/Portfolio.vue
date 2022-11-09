@@ -152,10 +152,6 @@ export default {
     background-size: cover;
     background-position: center;
 }
-.portfolio-image:nth-child(2n){
-    background-color: lightgray;
-}
-
 .portfolio-content {
     position: absolute;
     inset: 0;
