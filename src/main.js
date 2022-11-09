@@ -93,7 +93,7 @@ const store = new Vuex.Store({
                 },
                 {
                     id: 9,
-                    image: "https://graphicburger.com/wp-content/uploads/2014/03/Shopping-Bag-PSD-MockUp-600.jpg",
+                    image: "https://graphicburger.com/wp-content/uploads/2014/03/Shopping-Bag-PSD-MockUp-full.jpg",
                     title: "Minimal Bag",
                     categoryId: 1
                 }
