@@ -330,27 +330,29 @@ export default {
             :key="index"
             :virtualIndex="index"
           >
-            <div class="card mx-1 mx-lg-2">
-              <a href="/">
-                <div class="card-img-top">
-                  <div class="card-img">
-                    <img
-                      src=""
-                      :lazy-src="blog.image"
-                    />
+            <article>
+              <div class="card mx-1 mx-lg-2">
+                <a href="/">
+                  <div class="card-img-top">
+                    <div class="card-img">
+                      <img
+                        src=""
+                        :lazy-src="blog.image"
+                      />
+                    </div>
+                    <a
+                      class="card-link"
+                      href="/"
+                    >Nature</a>
                   </div>
-                  <a
-                    class="card-link"
-                    href="/"
-                  >Nature</a>
+                </a>
+                <div class="card-body">
+                  <div class="card-title">{{ blog.title }}</div>
+                  <div class="card-subtitle">{{ blog.date }}</div>
+                  <div class="card-text">{{ blog.shortContent }}</div>
                 </div>
-              </a>
-              <div class="card-body">
-                <div class="card-title">{{ blog.title }}</div>
-                <div class="card-subtitle">{{ blog.date }}</div>
-                <div class="card-text">{{ blog.shortContent }}</div>
               </div>
-            </div>
+            </article>
           </SwiperSlide>
         </Swiper>
       </div>

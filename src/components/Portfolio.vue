@@ -1,6 +1,6 @@
 <template>
     <div class="portfolio">
-        <div
+        <article
             class="article hide"
             :data-category-id="item.categoryId"
             v-for="(item, index) in portfolio"
@@ -24,7 +24,7 @@
                     <p class="portfolio-subtitle">{{ getCategoryName(item.categoryId) }}</p>
                 </div>
             </div>
-        </div>
+        </article>
     </div>
 </template>
 <script>

@@ -8,7 +8,7 @@
                         :categories="blogCategories"
                         v-on:category-selected="categorySelected"
                     ></ToggleNavbar>
-                    <div
+                    <article
                         v-for="(blog, index) in blogs"
                         :key="index"
                         class="blog-post hide"
@@ -41,7 +41,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
