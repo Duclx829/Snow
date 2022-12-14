@@ -65,7 +65,7 @@ export default {
       }
     },
     isLoaded: function() {
-      alert("Loaded");
+
     }
   },
   mounted() {
