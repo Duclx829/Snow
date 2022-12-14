@@ -63,6 +63,9 @@ export default {
           observer.observe(img);
         })
       }
+    },
+    isLoaded: function() {
+      alert("Loaded");
     }
   },
   mounted() {
@@ -80,6 +83,7 @@ export default {
       :isFixed="true"
     ></Navbar>
     <div id="header">
+      <img class="header-bg" src="../assets/home_2.png" @load="isLoaded()"/>
       <h6 class="header-subtitle">New branding agency</h6>
       <h3 class="container header-title">We are about to change the way<br /><em>you publish on the web</em></h3>
       <a
@@ -534,10 +538,10 @@ export default {
 }
 
 #header {
-  max-height: 1281px;
+  /* max-height: 1281px; */
   height: 100vh;
   width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/home_2.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -550,6 +554,11 @@ export default {
   overflow: hidden;
 }
 
+.header-bg{
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
 .header-subtitle {
   font-size: 1.1rem;
   font-weight: 700;

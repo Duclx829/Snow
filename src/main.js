@@ -218,7 +218,6 @@ const store = new Vuex.Store({
 });
 
 const app = createApp(App)
-
 app.use(createPinia())
 app.use(store)
 app.use(router)
